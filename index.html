@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabassum Khan | Web Developer</title>
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+/>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- SVG Grid Pattern with Enhanced Visibility -->
+    <svg width="100%" height="100%" class="svg-grid">
+        <!-- Vertical Lines -->
+        <path class="glitter-path" d="M 10% 0 L 10% 100%" stroke="var(--svg-line)" stroke-width="1" fill="none"></path>
+        <path class="glitter-path" d="M 25% 0 L 25% 100%" stroke="var(--svg-line)" stroke-width="1" fill="none"></path>
+        <path class="glitter-path" d="M 40% 0 L 40% 100%" stroke="var(--svg-line)" stroke-width="1" fill="none"></path>
+        <path class="glitter-path" d="M 55% 0 L 55% 100%" stroke="var(--svg-line)" stroke-width="1" fill="none"></path>
+        <path class="glitter-path" d="M 70% 0 L 70% 100%" stroke="var(--svg-line)" stroke-width="1" fill="none"></path>
+        <path class="glitter-path" d="M 85% 0 L 85% 100%" stroke="var(--svg-line)" stroke-width="1" fill="none"></path>
+        
+        <!-- Horizontal Lines -->
+        <path class="glitter-path" d="M 0 15% L 100% 15%" stroke="var(--svg-line)" stroke-width="1" fill="none"></path>
+        <path class="glitter-path" d="M 0 35% L 100% 35%" stroke="var(--svg-line)" stroke-width="1" fill="none"></path>
+        <path class="glitter-path" d="M 0 55% L 100% 55%" stroke="var(--svg-line)" stroke-width="1" fill="none"></path>
+        <path class="glitter-path" d="M 0 75% L 100% 75%" stroke="var(--svg-line)" stroke-width="1" fill="none"></path>
+        <path class="glitter-path" d="M 0 90% L 100% 90%" stroke="var(--svg-line)" stroke-width="1" fill="none"></path>
+       
+    </svg>
+
+    <!-- Floating background shapes -->
+    <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+    </div>
+
+    <!-- CSS Grid pattern -->
+    <div class="grid-pattern"></div>
+
+      <header class="header">
+        <a href="#" class="logo">Tabassum<span>Khan</span></a>
+        <nav class="nav">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="burger" >
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="text-light text-center">Turning ideas into <span>creative</span> solutions.</h1>
+            <p>Innovative web developer crafting unique user experiences.</p>
+            <div class="buttons">
+                <a href="https://drive.google.com/file/d/1PrSgU4PPqm9OvTIDpxXvFbItafJT5HrC/view?usp=sharing" target="_blank" class="btn-primary">Resume</a>
+                <a href="#contact" class="btn-outline">Contact Me</a>
+            </div>
+        </div>
+        <!-- Arrow Container -->
+<div class="arrow-container">
+  <svg id="animatedArrow" width="250" height="150" viewBox="0 0 100 100">
+    <!-- Bigger downward arrowhead -->
+    <path d="M10 30 L50 90 L90 30 Z" class="arrow-shape"/>
+  </svg>
+</div>
+    </section>
+
+ <!-- Projects Section -->
+<section class="projects-section">
+    
+            <!-- Floating Orb -->
+            <svg class="decorative-element floating-orb" viewBox="0 0 100 100">
+                <defs>
+                    <radialGradient id="orbGradient" cx="30%" cy="30%" r="70%">
+                        <stop offset="0%" stop-color="#9c4fff" stop-opacity="0.8" />
+                        <stop offset="100%" stop-color="#ff4e8d" stop-opacity="0.3" />
+                    </radialGradient>
+                </defs>
+                <circle cx="50" cy="50" r="40" fill="url(#orbGradient)">
+                    <animate attributeName="r" values="40;45;40" dur="4s" repeatCount="indefinite" />
+                </circle>
+            </svg>
+
+            <!-- Pulsing Circles -->
+            <svg class="decorative-element pulsing-circles" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="30" stroke="#ff4e8d" stroke-width="2" fill="none" stroke-dasharray="5,5">
+                    <animate attributeName="r" values="30;35;30" dur="3s" repeatCount="indefinite" />
+                </circle>
+                <circle cx="50" cy="50" r="20" stroke="#9c4fff" stroke-width="2" fill="none">
+                    <animate attributeName="r" values="20;25;20" dur="3s" repeatCount="indefinite" begin="0.5s" />
+                </circle>
+                <circle cx="50" cy="50" r="10" stroke="#ff4e8d" stroke-width="2" fill="none" stroke-dasharray="3,3">
+                    <animate attributeName="r" values="10;15;10" dur="3s" repeatCount="indefinite" begin="1s" />
+                </circle>
+            </svg>
+
+
+            <!-- Geometric Shapes -->
+            <svg class="decorative-element geometric-shapes" viewBox="0 0 100 100">
+                <polygon points="50,15 85,50 50,85 15,50" stroke="#ff4e8d" stroke-width="2" fill="none">
+                    <animate attributeName="stroke-width" values="2;3;2" dur="2s" repeatCount="indefinite" />
+                </polygon>
+                <circle cx="50" cy="50" r="20" stroke="#9c4fff" stroke-width="2" fill="none" stroke-dasharray="4,4">
+                    <animate attributeName="r" values="20;25;20" dur="3s" repeatCount="indefinite" />
+                </circle>
+            </svg>
+
+            <!-- Zigzag Line -->
+            <svg class="decorative-element zigzag-line" viewBox="0 0 150 30">
+                <path d="M0,15 L30,5 L60,25 L90,10 L120,20 L150,15" stroke="url(#zigzagGradient)" stroke-width="2" fill="none">
+                    <animate attributeName="d" values="M0,15 L30,5 L60,25 L90,10 L120,20 L150,15;M0,15 L30,10 L60,20 L90,5 L120,25 L150,15;M0,15 L30,5 L60,25 L90,10 L120,20 L150,15" dur="6s" repeatCount="indefinite" />
+                </path>
+                <defs>
+                    <linearGradient id="zigzagGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#9c4fff" />
+                        <stop offset="100%" stop-color="#ff4e8d" />
+                    </linearGradient>
+                </defs>
+            </svg>
+
+   
+
+            <!-- Hexagon Grid -->
+            <svg class="decorative-element hexagon-grid" viewBox="0 0 100 100">
+                <g stroke="#9c4fff" stroke-width="1" fill="none" opacity="0.8">
+                    <path d="M50,20 L65,30 L65,50 L50,60 L35,50 L35,30 Z" />
+                    <path d="M70,40 L85,50 L85,70 L70,80 L55,70 L55,50 Z" />
+                    <path d="M30,40 L15,50 L15,70 L30,80 L45,70 L45,50 Z" />
+                    <animate attributeName="opacity" values="0.7;0.4;0.7" dur="4s" repeatCount="indefinite" />
+                </g>
+            </svg>
+       
+
+    <!-- Projects Content -->
+     <div id="projects" class=" projects-section" id ="projects">
+    <h2 class="projects-title typewriter">Projects</h2>
+    <p class="projects-subtitle"><span class="typewriter-subtitle">Showcasing a selection of my recent work.</span></p>
+    <div class="projects-container">
+        
+  <div class="projects-separator"></div>
+    <div class="projects-list">
+        <!-- Project 1 -->
+        <div class="project-item">
+            <div class="project-number">01</div>
+            <div class="project-content">
+                <h3 class="project-name">Food Delivery App</h3>
+                <div class="project-desc">
+                    Full-stack app with React.js frontend and Node.js/Express backend
+                    <div class="project-image-preview">
+                        <img src="./images/ffe.png" alt="Food Delivery App Project Preview" 
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Project 2 -->
+        <div class="project-item">
+            <div class="project-number">02</div>
+            <div class="project-content">
+                <h3 class="project-name">Weather App</h3>
+                <div class="project-desc">
+                    Responsive single-page application with React.js and SCSS
+                    <div class="project-image-preview">
+                       <img src="./images/weather.png" alt="Weather App Project Preview" 
+                       >
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Project 3 -->
+        <div class="project-item">
+            <div class="project-number">03</div>
+            <div class="project-content">
+                <h3 class="project-name">E-Commerce Web App</h3>
+                <div class="project-desc">
+                    React and SCSS e-commerce application
+                    <div class="project-image-preview">
+                        <img src="./images/ecom.png" alt="E-Commerce Web App Project Preview"  >
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Project 4 -->
+        <div class="project-item">
+            <div class="project-number">04</div>
+            <div class="project-content">
+                <h3 class="project-name">HexaSnake</h3>
+                <div class="project-desc">
+                    Hexagonal Game Mechanics Powered by TypeScript & CSS
+                    <div class="project-image-preview">
+                       <img src="./images/game.png" alt="Portfolio Project Preview" >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+<!-- End of Projects Section -->
+
+
+<!--about us section begins here-->
+
+  <section class="modern-about-section" id="about">
+        <div class="modern-about">
+            <div class="background-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+            </div>
+            
+            <div class="modern-about-container">
+                <!-- Left Column -->
+                <div class="modern-about-left">
+                    <h2 class="modern-animated-element">Hi, I'm Tabassum.</h2>
+                    <p class="modern-intro modern-animated-element modern-delay-1">
+                        I'm a full stack web developer dedicated to turning ideas into creative solutions. I specialize in creating seamless and intuitive user experiences.
+                    </p>
+                    
+                    <div class="modern-skills-container modern-animated-element modern-delay-2">
+                        <div class="modern-skill-pill">JavaScript</div>
+                        <div class="modern-skill-pill">React</div>
+                        <div class="modern-skill-pill">Node.js</div>
+                        <div class="modern-skill-pill">CSS/SASS</div>
+                        <div class="modern-skill-pill">UI/UX Design</div>
+                        <div class="modern-skill-pill">Responsive Design</div>
+                    </div>
+                    
+                    <a href="#contact" class="modern-cta-button modern-animated-element modern-delay-3">
+                        Get in Touch
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Right Column -->
+                <div class="modern-about-right modern-animated-element modern-delay-4">
+                    <p>
+                        I'm involved in every step of the process: from discovery and design to development, testing, and deployment. I focus on delivering high-quality, scalable results that drive positive user experiences.
+                    </p>
+                    <p>
+                        My goal is to create user-centered designs that are not only visually appealing but also highly functional and accessible across all devices.
+                    </p>
+                    
+                    <div class="modern-stats-container">
+                        <div class="modern-stat-item">
+                            <div class="modern-stat-number">10+</div>
+                            <div class="modern-stat-label">Projects Completed</div>
+                        </div>
+                        <div class="modern-stat-item">
+                            <div class="modern-stat-number">2+</div>
+                            <div class="modern-stat-label">Years Experience</div>
+                        </div>
+                        <div class="modern-stat-item">
+                            <div class="modern-stat-number">100%</div>
+                            <div class="modern-stat-label">Client Satisfaction</div>
+                        </div>
+                        <div class="modern-stat-item">
+                            <div class="modern-stat-number">24/7</div>
+                            <div class="modern-stat-label">Availability</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ <!-- About Us Section ends here -->
+
+  
+ <!-- Skills Section -->
+ <section class="modern-skills-section" id="skills">
+        <div class="skills-orb"></div>
+        <div class="skills-blob"></div>
+        
+        <div class="skills-container">
+            <div class="section-header">
+                <h2 class="section-title">Skills & Expertise</h2>
+                <p class="section-subtitle">Technologies, tools, and soft skills I use to create exceptional digital experiences</p>
+            </div>
+            
+            <div class="skills-grid">
+                <!-- Front-End Skills -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3 class="category-title">Frontend Development</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">React.js</span>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                            <div class="skill-track">
+                                <div class="skill-progress" data-level="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">JavaScript (ES6+)</span>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="skill-track">
+                                <div class="skill-progress" data-level="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">TypeScript</span>
+                                <span class="skill-percentage">75%</span>
+                            </div>
+                            <div class="skill-track">
+                                <div class="skill-progress" data-level="75"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">HTML5 & CSS3</span>
+                                <span class="skill-percentage">95%</span>
+                            </div>
+                            <div class="skill-track">
+                                <div class="skill-progress" data-level="95"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Soft Skills -->
+                    <div class="soft-skills">
+                        <span>Teamwork</span>
+                        <span>Communication</span>
+                        <span>Problem Solving</span>
+                        <span>Creativity</span>
+                    </div>
+                </div>
+                
+                <!-- Back-End Skills -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3 class="category-title">Backend Development</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Node.js</span>
+                                <span class="skill-percentage">80%</span>
+                            </div>
+                            <div class="skill-track">
+                                <div class="skill-progress" data-level="80"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Express.js</span>
+                                <span class="skill-percentage">80%</span>
+                            </div>
+                            <div class="skill-track">
+                                <div class="skill-progress" data-level="80"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">REST APIs</span>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="skill-track">
+                                <div class="skill-progress" data-level="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">MongoDB</span>
+                                <span class="skill-percentage">75%</span>
+                            </div>
+                            <div class="skill-track">
+                                <div class="skill-progress" data-level="75"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Soft Skills -->
+                    <div class="soft-skills">
+                        <span>Leadership</span>
+                        <span>Critical Thinking</span>
+                        <span>Analytical Skills</span>
+                    </div>
+                </div>
+                
+                <!-- Tools & Technologies -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3 class="category-title">Tools & Technologies</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Git & GitHub</span>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="skill-track">
+                                <div class="skill-progress" data-level="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Docker</span>
+                                <span class="skill-percentage">65%</span>
+                            </div>
+                            <div class="skill-track">
+                                <div class="skill-progress" data-level="65"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Webpack</span>
+                                <span class="skill-percentage">70%</span>
+                            </div>
+                            <div class="skill-track">
+                                <div class="skill-progress" data-level="70"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Figma</span>
+                                <span class="skill-percentage">75%</span>
+                            </div>
+                            <div class="skill-track">
+                                <div class="skill-progress" data-level="75"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Soft Skills -->
+                    <div class="soft-skills">
+                        <span>Adaptability</span>
+                        <span>Time Management</span>
+                        <span>Attention to Detail</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- End of Skills Section -->
+
+
+ 
+<!-- start of education section-->
+
+  <section class="education-section" id="education">
+        <div class="education-decoration education-decoration-1"></div>
+        <div class="education-decoration education-decoration-2"></div>
+        
+        <h2 class="education-section-title">Education</h2>
+        
+        <div class="education-timeline">
+            <!-- Timeline line -->
+            <div class="education-timeline-line"></div>
+            
+            <!-- Education Item 1 -->
+<!-- Education Item 1 -->
+<div class="education-item">
+  <!-- Timeline elements -->
+  <div class="education-date">2024-2025</div>
+  <div class="education-icon">
+    <i class="fas fa-code"></i>
+  </div>
+  
+
+  <!-- Card -->
+  <div class="education-content">
+    <h3>Full Stack Web Developer Certification</h3>
+    <span class="education-institution">Digital Career Institute – Germany</span>
+    <p>Covered: Node.js, MongoDB, REST APIs, Agile Development. Hands-on training in full-stack web app development.</p>
+    <div class="education-skills">
+      <span class="education-skill-tag">Node.js</span>
+      <span class="education-skill-tag">MongoDB</span>
+      <span class="education-skill-tag">REST APIs</span>
+      <span class="education-skill-tag">Agile</span>
+    </div>
+  </div>
+</div>
+
+<!-- Education Item 2 -->
+<div class="education-item">
+  <!-- Timeline elements -->
+  <div class="education-date">2013-2015</div>
+  <div class="education-icon">
+    <i class="fas fa-graduation-cap"></i>
+  </div>
+
+
+  <!-- Card -->
+  <div class="education-content">
+    <h3>Master of Business Administration (MBA), Human Resources</h3>
+    <span class="education-institution">Allana Institute of Management Sciences – Pune, India</span>
+    <p>Developed leadership and collaboration skills through comprehensive business and management training.</p>
+    <div class="education-skills">
+      <span class="education-skill-tag">Leadership</span>
+      <span class="education-skill-tag">Collaboration</span>
+      <span class="education-skill-tag">Management</span>
+    </div>
+  </div>
+</div>
+
+<!-- Education Item 3 -->
+<div class="education-item">
+  <!-- Timeline elements -->
+  <div class="education-date">2003-2007</div>
+  <div class="education-icon">
+    <i class="fas fa-laptop-code"></i>
+  </div>
+
+
+  <!-- Card -->
+  <div class="education-content">
+    <h3>Bachelor of Engineering (B.E.), Information Technology</h3>
+    <span class="education-institution">D.Y. Patil College of Engineering – Pune, India</span>
+    <p>Core coursework: Software Engineering, Data Structures, Web Technologies, Database Systems, and Network Security.</p>
+    <div class="education-skills">
+      <span class="education-skill-tag">Software Engineering</span>
+      <span class="education-skill-tag">Data Structures</span>
+      <span class="education-skill-tag">Web Technologies</span>
+    </div>
+  </div>
+</div>
+
+        </div>
+    </section>
+
+<!-- End of Education Section -->
+
+<!-- start of work experience section   -->
+ <section class="experience-section" id="experience">
+        <div class="experience-container">
+            <h2 class="experience-title">Work Experience</h2>
+            
+            <div class="experience-grid">
+                <!-- Experience Item 1 -->
+                <div class="experience-card">
+                    <div class="experience-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="experience-header">
+                        <div>
+                            <h3 class="experience-position">Fullstack Developer Intern (Frontend-Focused)</h3>
+                            <p class="experience-company">U-Glow | Mülheim</p>
+                        </div>
+                        <span class="experience-date">03/2025 – 06/2025</span>
+                    </div>
+                    <ul class="experience-details">
+                        <li class="experience-detail-item">
+                            Developed reusable React components integrated with a Python/Docker backend.
+                        </li>
+                        <li class="experience-detail-item">
+                            Ensured smooth API communication and modular front-end architecture.
+                        </li>
+                        <li class="experience-detail-item">
+                            Participated in Agile sprints, pair programming, and code reviews.
+                        </li>
+                        <li class="experience-detail-item">
+                            Used Docker for containerized development and deployment.
+                        </li>
+                    </ul>
+                    <div class="tech-tags">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">API Integration</span>
+                        <span class="tech-tag">Agile</span>
+                    </div>
+                </div>
+                
+                <!-- Experience Item 2 -->
+                <div class="experience-card">
+                    <div class="experience-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="experience-header">
+                        <div>
+                            <h3 class="experience-position">Software Developer (Freelance Project)</h3>
+                        </div>
+                        <span class="experience-date">11/2024 – 12/2024</span>
+                    </div>
+                    <ul class="experience-details">
+                        <li class="experience-detail-item">
+                            Delivered WordPress/WooCommerce e-commerce store with Stripe payment integration.
+                        </li>
+                        <li class="experience-detail-item">
+                            Customized layouts using Elementor and implemented SEO & responsiveness improvements.
+                        </li>
+                        <li class="experience-detail-item">
+                            Translated business requirements into technical solutions for clients.
+                        </li>
+                    </ul>
+                    <div class="tech-tags">
+                        <span class="tech-tag">WordPress</span>
+                        <span class="tech-tag">WooCommerce</span>
+                        <span class="tech-tag">Stripe</span>
+                        <span class="tech-tag">Elementor</span>
+                        <span class="tech-tag">SEO</span>
+                    </div>
+                </div>
+                
+                <!-- Experience Item 3 -->
+                <div class="experience-card">
+                    <div class="experience-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <div class="experience-header">
+                        <div>
+                            <h3 class="experience-position">Early Career Experience (India)</h3>
+                        </div>
+                        <span class="experience-date">2008 to 2016</span>
+                    </div>
+                    <div class="experience-subsection">
+                        <h4 class="experience-subposition">Computer Instructor</h4>
+                        <p class="experience-description">Delivered training in HTML, CSS, JavaScript, Microsoft Office, and software tools; awarded Best Instructor recognition.</p>
+                    </div>
+                    <div class="experience-subsection">
+                        <h4 class="experience-subposition">Software Developer – Kinetic Limited</h4>
+                        <p class="experience-description">Supported development of financial tools, optimized performance, and practiced pair programming & QA testing.</p>
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">HTML/CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">MS Office</span>
+                        <span class="tech-tag">QA Testing</span>
+                        <span class="tech-tag">Pair Programming</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- End of Work Experience Section -->
+
+ <!-- start of certifications section -->
+   <section class="certifications-section" id="certifications">
+        <div class="background-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+        </div>
+        
+        <div class="certifications-container">
+            <h2 class="certifications-title">Certifications</h2>
+            
+            <div class="certifications-grid">
+                <!-- Certification 1 -->
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3 class="certification-name">Full Stack Web Developer</h3>
+                    <p class="certification-issuer">Digital Career Institute, Germany</p>
+                    <p class="certification-date">May 2025</p>
+                    <span class="certification-badge">Tech Certification</span>
+                </div>
+                
+                <!-- Certification 2 -->
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3 class="certification-name">German Language Certificate (B2)</h3>
+                    <p class="certification-issuer">Lingoda</p>
+                    <p class="certification-date">June 2025</p>
+                    <span class="certification-badge">Language Proficiency</span>
+                </div>
+                
+                <!-- Certification 3 -->
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3 class="certification-name">TELC German Language Certificate (B1)</h3>
+                    <p class="certification-issuer">TELC</p>
+                    <p class="certification-date">January 2023</p>
+                    <span class="certification-badge">Language Proficiency</span>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- End of Certifications Section -->
+ <!-- Contact Section -->
+  <section class="contact-section" id="contact">
+        <!-- Background elements -->
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+        </div>
+        
+        <svg class="svg-grid">
+            <!-- Vertical Lines -->
+            <path class="glitter-path" d="M 10% 0 L 10% 100%"></path>
+            <path class="glitter-path" d="M 25% 0 L 25% 100%"></path>
+            <path class="glitter-path" d="M 40% 0 L 40% 100%"></path>
+            <path class="glitter-path" d="M 55% 0 L 55% 100%"></path>
+            <path class="glitter-path" d="M 70% 0 L 70% 100%"></path>
+            <path class="glitter-path" d="M 85% 0 L 85% 100%"></path>
+            
+            <!-- Horizontal Lines -->
+            <path class="glitter-path" d="M 0 15% L 100% 15%"></path>
+            <path class="glitter-path" d="M 0 35% L 100% 35%"></path>
+            <path class="glitter-path" d="M 0 55% L 100% 55%"></path>
+            <path class="glitter-path" d="M 0 75% L 100% 75%"></path>
+            <path class="glitter-path" d="M 0 90% L 100% 90%"></path>
+        </svg>
+
+        <div class="contact-container">
+            <div class="contact-header">
+                <h2 class="contact-title">Let's Connect</h2>
+                <p class="contact-subtitle">I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+            </div>
+            
+            <div class="contact-content">
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3 class="info-title">Email</h3>
+                        <p class="info-detail">ktabassum1809@gmail.com</p>
+                        <a href="mailto:ktabassum1809@gmail.com" class="btn-primary" target="_blank">Send Message</a>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </div>
+                        <h3 class="info-title">LinkedIn</h3>
+                        <p class="info-detail">Let's connect professionally</p>
+                        <a href="https://www.linkedin.com/in/tabassum-khan-3688602b7/" class="btn-outline" target="_blank">Connect</a>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <h3 class="info-title">GitHub</h3>
+                        <p class="info-detail">Check out my projects</p>
+                        <a href="https://github.com/ktabassum1809" class="btn-outline" target="_blank">View Profile</a>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="contact-form-container">
+                    <h3 class="form-title">Send me a message</h3>
+                    
+                    <form class="contact-form" id="contactForm" action="https://formspree.io/f/xandzrnn" method="POST">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name" class="form-label">Your Name</label>
+                                <input type="text" id="name" name="name" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="form-label">Your Email</label>
+                                <input type="email" id="email" name="email" class="form-input" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" id="subject" name="subject" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">Your Message</label>
+                            <textarea id="message" name="message" class="form-input" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+
+                        <div id="successMessage" class="message success-message">Message sent successfully!</div>
+                        <div id="errorMessage" class="message error-message">Oops! Something went wrong.</div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- End of Contact Section -->
+
+
+    <!-- Footer -->
+     <footer class="portfolio-footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>Tabassum Khan</h3>
+            <p>Frontend Developer creating beautiful, functional web experiences with modern technologies.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/tabassum-khan-3688602b7/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/ktabassum1809" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        
+        <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-section">
+            <h4>Contact Info</h4>
+            <ul>
+                <li><i class="fas fa-envelope"></i> ktabassum1809@gmail.com</li>
+                <li><i class="fas fa-phone"></i> +49 176 62473551</li>
+                <li><i class="fas fa-map-marker-alt"></i> Kleve, Germany</li>
+            </ul>
+        </div>
+        
+        <div class="footer-section">
+            <h4>Newsletter</h4>
+            <p>Subscribe to stay updated with my latest projects</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>&copy; 2025 Tabassum Khan. All rights reserved.</p>
+        <div class="legal-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+        </div>
+    </div>
+</footer>
+    <!-- End of Footer -->
+
+
+    <script src="script.js"></script>
+</body>
+</html>

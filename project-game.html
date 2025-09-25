@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hexagonal Snake Game | Tabassum Khan</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --gradient-start: #ff4e8d;
+        --gradient-end: #9c4fff;
+        --dark: #0a0a14;
+        --darker: #070710;
+        --light: #ffffff;
+        --gray-1: #b0b0b0;
+        --svg-line: rgba(156, 79, 255, 0.15);
+        --card-bg: rgba(255, 255, 255, 0.05);
+        --card-border: rgba(255, 255, 255, 0.1);
+        --accent: #9c4fff;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
+        color: var(--light);
+        line-height: 1.6;
+        overflow-x: hidden;
+        position: relative;
+        min-height: 100vh;
+      }
+
+      /* Header Styles */
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem 2rem;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: rgba(10, 10, 20, 0.9);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .logo {
+        font-size: 1.8rem;
+        font-weight: 800;
+        color: var(--light);
+        text-decoration: none;
+      }
+
+      .logo span {
+        background: linear-gradient(
+          90deg,
+          var(--gradient-start),
+          var(--gradient-end)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .nav ul {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+      }
+
+      .nav a {
+        color: var(--light);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .nav a:hover {
+        color: var(--gradient-start);
+      }
+
+      .nav a::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(
+          90deg,
+          var(--gradient-start),
+          var(--gradient-end)
+        );
+        transition: width 0.3s ease;
+      }
+
+      .nav a:hover::after {
+        width: 100%;
+      }
+
+      .burger {
+        display: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        z-index: 1001;
+      }
+
+      /* SVG Grid */
+      .svg-grid {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        opacity: 0.5;
+      }
+
+      /* Floating Shapes */
+      .floating-shapes {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        overflow: hidden;
+      }
+
+      .shape {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(60px);
+        opacity: 0.2;
+      }
+
+      .shape-1 {
+        width: 400px;
+        height: 400px;
+        background: var(--gradient-start);
+        top: -100px;
+        left: -100px;
+        animation: float 15s ease-in-out infinite;
+      }
+
+      .shape-2 {
+        width: 300px;
+        height: 300px;
+        background: var(--gradient-end);
+        bottom: -50px;
+        right: -100px;
+        animation: float 18s ease-in-out infinite 2s;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translate(0, 0) rotate(0deg);
+        }
+        50% {
+          transform: translate(30px, 40px) rotate(180deg);
+        }
+      }
+
+      /* Project Detail Styles */
+      .project-detail {
+        padding: 10rem 2rem 4rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+      }
+
+      .back-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.8rem 1.8rem;
+        background: linear-gradient(
+          90deg,
+          var(--gradient-start),
+          var(--gradient-end)
+        );
+        color: var(--light);
+        text-decoration: none;
+        border-radius: 12px;
+        font-weight: 600;
+        margin-bottom: 2.5rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(156, 79, 255, 0.3);
+        border: none;
+        cursor: pointer;
+      }
+
+      .back-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(156, 79, 255, 0.5);
+      }
+
+      .project-header {
+        margin-bottom: 4rem;
+        text-align: center;
+      }
+
+      .project-title {
+        font-size: 3.5rem;
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+        background: linear-gradient(
+          90deg,
+          var(--gradient-start),
+          var(--gradient-end)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        line-height: 1.2;
+      }
+
+      .project-meta {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 3rem;
+        margin-bottom: 2rem;
+      }
+
+      .meta-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: var(--card-bg);
+        padding: 1.2rem 1.8rem;
+        border-radius: 16px;
+        border: 1px solid var(--card-border);
+        backdrop-filter: blur(10px);
+        min-width: 160px;
+      }
+
+      .meta-label {
+        font-size: 0.9rem;
+        color: var(--gray-1);
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+      }
+
+      .meta-value {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--light);
+      }
+
+      .project-image {
+        width: 100%;
+        border-radius: 20px;
+        overflow: hidden;
+        margin-bottom: 4rem;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        position: relative;
+        border: 1px solid var(--card-border);
+        transition: transform 0.5s ease;
+      }
+
+      .project-image:hover {
+        transform: translateY(-5px);
+      }
+
+      .project-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.5s ease;
+      }
+
+      .project-image:hover img {
+        transform: scale(1.02);
+      }
+
+      .project-content {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 4rem;
+      }
+
+      @media (min-width: 992px) {
+        .project-content {
+          grid-template-columns: 2fr 1fr;
+        }
+      }
+
+      .project-description {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: var(--gray-1);
+      }
+
+      .project-description p {
+        margin-bottom: 1.5rem;
+      }
+
+      .project-description h3 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin: 2.5rem 0 1.5rem;
+        color: var(--light);
+        position: relative;
+        padding-left: 1.2rem;
+      }
+
+      .project-description h3::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 6px;
+        height: 24px;
+        background: linear-gradient(
+          90deg,
+          var(--gradient-start),
+          var(--gradient-end)
+        );
+        border-radius: 10px;
+      }
+
+      .project-details {
+        background: var(--card-bg);
+        border-radius: 20px;
+        padding: 2.5rem;
+        border: 1px solid var(--card-border);
+        backdrop-filter: blur(10px);
+        align-self: start;
+        position: sticky;
+        top: 120px;
+      }
+
+      .detail-section {
+        margin-bottom: 2.5rem;
+      }
+
+      .detail-section:last-child {
+        margin-bottom: 0;
+      }
+
+      .detail-section h4 {
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-bottom: 1.2rem;
+        color: var(--light);
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+      }
+
+      .detail-section h4 i {
+        color: var(--gradient-start);
+        font-size: 1.2rem;
+      }
+
+      .tech-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+      }
+
+      .tech-item {
+        padding: 0.6rem 1.2rem;
+        background: linear-gradient(
+          90deg,
+          rgba(255, 78, 141, 0.15),
+          rgba(156, 79, 255, 0.15)
+        );
+        border-radius: 50px;
+        font-size: 0.95rem;
+        color: var(--light);
+        font-weight: 500;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .tech-item:hover {
+        background: linear-gradient(
+          90deg,
+          rgba(255, 78, 141, 0.25),
+          rgba(156, 79, 255, 0.25)
+        );
+        border-color: rgba(255, 255, 255, 0.2);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(156, 79, 255, 0.2);
+      }
+
+      .detail-section ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .detail-section li {
+        margin-bottom: 0.8rem;
+        padding-left: 1.5rem;
+        position: relative;
+        color: var(--gray-1);
+      }
+
+      .detail-section li::before {
+        content: "•";
+        color: var(--gradient-start);
+        font-weight: bold;
+        position: absolute;
+        left: 0;
+      }
+
+      .action-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+
+      .btn-primary,
+      .btn-outline {
+        padding: 1.2rem 2rem;
+        border-radius: 12px;
+        font-weight: 700;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.8rem;
+        text-align: center;
+        font-size: 1.1rem;
+      }
+
+      .btn-primary {
+        background: linear-gradient(
+          90deg,
+          var(--gradient-start),
+          var(--gradient-end)
+        );
+        color: var(--light);
+        box-shadow: 0 6px 20px rgba(156, 79, 255, 0.4);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(156, 79, 255, 0.6);
+      }
+
+      .btn-outline {
+        border: 2px solid var(--light);
+        color: var(--light);
+        background: transparent;
+      }
+
+      .btn-outline:hover {
+        background: var(--light);
+        color: var(--dark);
+        transform: translateY(-3px);
+      }
+
+      /* Project Showcase */
+      .project-showcase {
+        margin-top: 5rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .showcase-item {
+        background: var(--card-bg);
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid var(--card-border);
+        transition: transform 0.3s ease;
+      }
+
+      .showcase-item:hover {
+        transform: translateY(-5px);
+      }
+
+      .showcase-img {
+        height: 200px;
+        overflow: hidden;
+      }
+
+      .showcase-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .showcase-item:hover .showcase-img img {
+        transform: scale(1.05);
+      }
+
+      .showcase-content {
+        padding: 1.5rem;
+      }
+
+      .showcase-content h4 {
+        font-size: 1.2rem;
+        margin-bottom: 0.8rem;
+        color: var(--light);
+      }
+
+      .showcase-content p {
+        color: var(--gray-1);
+        font-size: 0.95rem;
+      }
+
+      /* Game Embed Styles */
+      .game-embed {
+        width: 100%;
+        height: 600px;
+        border-radius: 20px;
+        overflow: hidden;
+        margin: 3rem 0;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        border: 1px solid var(--card-border);
+      }
+
+      .game-embed iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .header {
+          padding: 1rem;
+        }
+
+        .nav {
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100vh;
+          background: rgba(10, 10, 20, 0.95);
+          backdrop-filter: blur(10px);
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          z-index: 999;
+        }
+
+        .nav.active {
+          display: flex;
+        }
+
+        .nav ul {
+          flex-direction: column;
+          gap: 2.5rem;
+          text-align: center;
+        }
+
+        .nav a {
+          font-size: 1.4rem;
+          padding: 0.5rem 1rem;
+        }
+
+        .burger {
+          display: block;
+        }
+
+        .burger.active i::before {
+          content: "\f00d"; /* Changes to X icon when active */
+        }
+
+        .project-detail {
+          padding: 7rem 1.5rem 3rem;
+        }
+
+        .project-title {
+          font-size: 2.5rem;
+        }
+
+        .project-meta {
+          gap: 1.5rem;
+        }
+
+        .meta-item {
+          padding: 1rem 1.2rem;
+          min-width: 140px;
+        }
+
+        .project-content {
+          gap: 2.5rem;
+        }
+
+        .project-details {
+          position: static;
+        }
+
+        .action-buttons {
+          flex-direction: column;
+        }
+
+        .btn-primary,
+        .btn-outline {
+          width: 100%;
+        }
+
+        .game-embed {
+          height: 400px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- SVG Grid Pattern -->
+    <svg width="100%" height="100%" class="svg-grid">
+      <!-- Vertical Lines -->
+      <path
+        class="glitter-path"
+        d="M 10% 0 L 10% 100%"
+        stroke="var(--svg-line)"
+        stroke-width="1"
+        fill="none"
+      ></path>
+      <path
+        class="glitter-path"
+        d="M 25% 0 L 25% 100%"
+        stroke="var(--svg-line)"
+        stroke-width="1"
+        fill="none"
+      ></path>
+      <path
+        class="glitter-path"
+        d="M 40% 0 L 40% 100%"
+        stroke="var(--svg-line)"
+        stroke-width="1"
+        fill="none"
+      ></path>
+      <path
+        class="glitter-path"
+        d="M 55% 0 L 55% 100%"
+        stroke="var(--svg-line)"
+        stroke-width="1"
+        fill="none"
+      ></path>
+      <path
+        class="glitter-path"
+        d="M 70% 0 L 70% 100%"
+        stroke="var(--svg-line)"
+        stroke-width="1"
+        fill="none"
+      ></path>
+      <path
+        class="glitter-path"
+        d="M 85% 0 L 85% 100%"
+        stroke="var(--svg-line)"
+        stroke-width="1"
+        fill="none"
+      ></path>
+
+      <!-- Horizontal Lines -->
+      <path
+        class="glitter-path"
+        d="M 0 15% L 100% 15%"
+        stroke="var(--svg-line)"
+        stroke-width="1"
+        fill="none"
+      ></path>
+      <path
+        class="glitter-path"
+        d="M 0 35% L 100% 35%"
+        stroke="var(--svg-line)"
+        stroke-width="1"
+        fill="none"
+      ></path>
+      <path
+        class="glitter-path"
+        d="M 0 55% L 100% 55%"
+        stroke="var(--svg-line)"
+        stroke-width="1"
+        fill="none"
+      ></path>
+      <path
+        class="glitter-path"
+        d="M 0 75% L 100% 75%"
+        stroke="var(--svg-line)"
+        stroke-width="1"
+        fill="none"
+      ></path>
+      <path
+        class="glitter-path"
+        d="M 0 90% L 100% 90%"
+        stroke="var(--svg-line)"
+        stroke-width="1"
+        fill="none"
+      ></path>
+    </svg>
+
+    <!-- Floating background shapes -->
+    <div class="floating-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+      <a href="index.html" class="logo">Tabassum<span>Khan</span></a>
+      <nav class="nav" id="nav">
+        <ul>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="index.html#skills">Skills</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="burger" id="burger">
+        <i class="fas fa-bars"></i>
+      </div>
+    </header>
+
+    <!-- Project Detail Section -->
+    <section class="project-detail">
+      <a href="index.html#projects" class="back-button">
+        <i class="fas fa-arrow-left"></i> Back to Projects
+      </a>
+
+      <div class="project-header">
+        <h1 class="project-title">Hexagonal Snake Game</h1>
+        <div class="project-meta">
+          <div class="meta-item">
+            <span class="meta-label">Timeline</span>
+            <span class="meta-value">December 2024</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Role</span>
+            <span class="meta-value">Full Stack Developer</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Category</span>
+            <span class="meta-value">Game Development</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-image">
+        <img src="./images/game.png" alt="Hexagonal Snake Game screenshot" />
+      </div>
+
+      <div class="project-content">
+        <div class="project-description">
+          <p>
+            A modern twist on the classic Snake game featuring a hexagonal grid,
+            multiple food types, power-ups, and responsive design for both
+            desktop and mobile devices.
+          </p>
+
+          <h3>Project Background</h3>
+          <p>
+            I developed this game to explore creative approaches to classic game
+            concepts while implementing modern web technologies. The hexagonal
+            grid adds a unique challenge to the traditional snake gameplay,
+            requiring different movement mechanics and strategy.
+          </p>
+
+          <h3>Development Process</h3>
+          <p>
+            The development followed an iterative approach, starting with the
+            core hexagonal grid implementation, then adding snake movement
+            mechanics, food generation, and finally special items and power-ups.
+            I focused on creating a responsive design that works well on both
+            desktop and mobile devices.
+          </p>
+
+          <h3>Technical Implementation</h3>
+          <p>
+            The game uses  TypeScript for type safety and
+            better code organization. The hexagonal grid is created using CSS
+            clip-paths, and the game state is managed through a custom game
+            loop. Special features include different food types (normal, golden,
+            poison, power), power-ups (invincibility, slow motion), and adaptive
+            difficulty levels.
+          </p>
+
+          <h3>Challenges & Solutions</h3>
+          <p>
+            The hexagonal grid presented unique challenges for collision
+            detection and movement logic. I implemented a coordinate system that
+            accounts for the offset rows in the hexagonal grid. Another
+            challenge was creating smooth animations and responsive controls for
+            mobile devices, which was solved with CSS transitions and
+            touch-optimized control buttons.
+          </p>
+        </div>
+
+        <div class="project-details">
+          <div class="detail-section">
+            <h4><i class="fas fa-code"></i> Technologies</h4>
+            <div class="tech-list">
+              <div class="tech-item">TypeScript</div>
+
+              <div class="tech-item">HTML5</div>
+              <div class="tech-item">CSS3</div>
+              <div class="tech-item">Responsive Design</div>
+              <div class="tech-item">Game Development</div>
+            </div>
+          </div>
+
+          <div class="detail-section">
+            <h4><i class="fas fa-star"></i> Key Features</h4>
+            <ul>
+              <li>Hexagonal grid for unique gameplay</li>
+              <li>Multiple food types with different effects</li>
+              <li>Power-up system with temporary abilities</li>
+              <li>Progressive difficulty levels</li>
+              <li>Responsive design for all devices</li>
+              <li>Mobile touch controls</li>
+              <li>Score tracking and game statistics</li>
+            </ul>
+          </div>
+
+          <div class="detail-section">
+            <h4><i class="fas fa-link"></i> Links</h4>
+            <div class="action-buttons">
+              <a href="#" class="btn-primary">
+                <i class="fas fa-gamepad"></i> Play Game
+              </a>
+              <a href="#" class="btn-outline" target="_blank">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-showcase">
+        <div class="showcase-item">
+          <div class="showcase-img">
+            <img src="./images/game1.png" alt="Hexagonal Grid Design" />
+          </div>
+          <div class="showcase-content">
+            <h4>Hexagonal Grid Design</h4>
+            <p>
+              Unique hexagonal layout that creates interesting movement patterns
+              and gameplay challenges
+            </p>
+          </div>
+        </div>
+        <div class="showcase-item">
+          <div class="showcase-img">
+            <img src="./images/game2.png" alt="Special Items and Power-ups" />
+          </div>
+          <div class="showcase-content">
+            <h4>Special Items & Power-ups</h4>
+            <p>
+              Multiple food types with different effects and power-ups that
+              temporarily change gameplay
+            </p>
+          </div>
+        </div>
+        <div class="showcase-item">
+          <div class="showcase-img">
+            <img src="./images/game3.png" alt="Mobile Responsive Design" />
+          </div>
+          <div class="showcase-content">
+            <h4>Mobile Responsive</h4>
+            <p>
+              Fully responsive design with touch controls optimized for mobile
+              devices
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Enhanced JavaScript for mobile navigation
+      const burger = document.getElementById("burger");
+      const nav = document.getElementById("nav");
+
+      burger.addEventListener("click", function () {
+        nav.classList.toggle("active");
+        burger.classList.toggle("active");
+
+        // Prevent body scrolling when menu is open
+        document.body.style.overflow = nav.classList.contains("active")
+          ? "hidden"
+          : "";
+      });
+
+      // Close menu when clicking on a link
+      const navLinks = document.querySelectorAll(".nav a");
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          nav.classList.remove("active");
+          burger.classList.remove("active");
+          document.body.style.overflow = "";
+        });
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener("click", function (event) {
+        const isClickInsideNav = nav.contains(event.target);
+        const isClickOnBurger = burger.contains(event.target);
+
+        if (
+          !isClickInsideNav &&
+          !isClickOnBurger &&
+          nav.classList.contains("active")
+        ) {
+          nav.classList.remove("active");
+          burger.classList.remove("active");
+          document.body.style.overflow = "";
+        }
+      });
+    </script>
+  </body>
+</html>
