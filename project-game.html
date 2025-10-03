@@ -75,6 +75,51 @@
         background-clip: text;
         color: transparent;
       }
+.project-stats {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin: 2rem 0 3rem;
+        flex-wrap: wrap;
+      }
+
+      .stat {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: var(--card-bg);
+        padding: 1.5rem 1rem;
+        border-radius: 16px;
+        border: 1px solid var(--card-border);
+        min-width: 120px;
+        transition: transform 0.3s ease;
+      }
+
+      .stat:hover {
+        transform: translateY(-5px);
+      }
+
+      .number {
+        font-size: 2.5rem;
+        font-weight: 800;
+        background: linear-gradient(
+          90deg,
+          var(--gradient-start),
+          var(--gradient-end)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        line-height: 1;
+        margin-bottom: 0.5rem;
+      }
+
+      .label {
+        font-size: 0.9rem;
+        color: var(--gray-1);
+        font-weight: 600;
+        text-align: center;
+      }
 
       .nav ul {
         display: flex;
@@ -757,8 +802,28 @@
         </div>
       </div>
 
+       <div class="project-stats">
+          <div class="stat">
+            <span class="number">4</span>
+            <span class="label">Food Types</span>
+          </div>
+          <div class="stat">
+            <span class="number">2</span>
+            <span class="label">Power-ups</span>
+          </div>
+          <div class="stat">
+            <span class="number">100%</span>
+            <span class="label">Responsive</span>
+          </div>
+          <div class="stat">
+            <span class="number">10×10</span>
+            <span class="label">Grid Size</span>
+          </div>
+        </div>
+      </div>
+
       <div class="project-image">
-        <img src="./images/game.png" alt="Hexagonal Snake Game screenshot" />
+        <img src="./images/game1.png" alt="Hexagonal Snake Game screenshot" />
       </div>
 
       <div class="project-content">
@@ -805,6 +870,16 @@
             mobile devices, which was solved with CSS transitions and
             touch-optimized control buttons.
           </p>
+
+          <h3>Key Learnings</h3>
+          <ul>
+            <li>Advanced TypeScript type systems for game state management</li>
+            <li>CSS clip-path animations and performance optimization</li>
+            <li>Mobile-first game development and touch event handling</li>
+            <li>Game loop optimization and frame rate management</li>
+            <li>Hexagonal coordinate mathematics and collision detection</li>
+          </ul>
+        </div>
         </div>
 
         <div class="project-details">
@@ -817,6 +892,7 @@
               <div class="tech-item">CSS3</div>
               <div class="tech-item">Responsive Design</div>
               <div class="tech-item">Game Development</div>
+                <div class="tech-item">Local Storage API</div>
             </div>
           </div>
 
@@ -830,6 +906,7 @@
               <li>Responsive design for all devices</li>
               <li>Mobile touch controls</li>
               <li>Score tracking and game statistics</li>
+                <li>Local storage for high scores</li>
             </ul>
           </div>
 
