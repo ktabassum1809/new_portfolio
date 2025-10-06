@@ -13,36 +13,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- SVG Grid Pattern with Enhanced Visibility -->
-    <svg width="100%" height="100%" class="svg-grid">
-        <!-- Vertical Lines -->
-        <path class="glitter-path" d="M 10% 0 L 10% 100%" stroke="var(--svg-line)" stroke-width="1" fill="none"></path>
-        <path class="glitter-path" d="M 25% 0 L 25% 100%" stroke="var(--svg-line)" stroke-width="1" fill="none"></path>
-        <path class="glitter-path" d="M 40% 0 L 40% 100%" stroke="var(--svg-line)" stroke-width="1" fill="none"></path>
-        <path class="glitter-path" d="M 55% 0 L 55% 100%" stroke="var(--svg-line)" stroke-width="1" fill="none"></path>
-        <path class="glitter-path" d="M 70% 0 L 70% 100%" stroke="var(--svg-line)" stroke-width="1" fill="none"></path>
-        <path class="glitter-path" d="M 85% 0 L 85% 100%" stroke="var(--svg-line)" stroke-width="1" fill="none"></path>
-        
-        <!-- Horizontal Lines -->
-        <path class="glitter-path" d="M 0 15% L 100% 15%" stroke="var(--svg-line)" stroke-width="1" fill="none"></path>
-        <path class="glitter-path" d="M 0 35% L 100% 35%" stroke="var(--svg-line)" stroke-width="1" fill="none"></path>
-        <path class="glitter-path" d="M 0 55% L 100% 55%" stroke="var(--svg-line)" stroke-width="1" fill="none"></path>
-        <path class="glitter-path" d="M 0 75% L 100% 75%" stroke="var(--svg-line)" stroke-width="1" fill="none"></path>
-        <path class="glitter-path" d="M 0 90% L 100% 90%" stroke="var(--svg-line)" stroke-width="1" fill="none"></path>
-       
-    </svg>
+  
+   
 
-    <!-- Floating background shapes -->
-    <div class="floating-shapes">
-        <div class="shape shape-1"></div>
-        <div class="shape shape-2"></div>
-    </div>
 
-    <!-- CSS Grid pattern -->
-    <div class="grid-pattern"></div>
 
       <header class="header">
         <a href="#" class="logo">Tabassum<span>Khan</span></a>
+
+       
         <nav class="nav">
             <ul>
                 <li><a href="#about">About</a></li>
@@ -54,32 +33,113 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
+
+          <div class="language-switcher">
+        <div id="google_translate_element"></div>
+    </div>
+
         <div class="burger" >
             <i class="fas fa-bars"></i>
         </div>
+       
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1 class="text-light text-center">Turning ideas into <span>creative</span> solutions.</h1>
-            <p>Innovative web developer crafting unique user experiences.</p>
-            <div class="buttons">
-                <a href="https://drive.google.com/file/d/1PrSgU4PPqm9OvTIDpxXvFbItafJT5HrC/view?usp=sharing" target="_blank" class="btn-primary">Resume</a>
-                <a href="#contact" class="btn-outline">Contact Me</a>
+<!-- Enhanced Hero Section -->
+<section class="hero">
+
+    <div class="magnetic-cursor"></div>
+    <div class="magnetic-dot"></div>
+    <div class="scroll-progress"></div>
+    <div class="interactive-particles" id="particles-container"></div>
+    
+    <!-- Clean Background -->
+    <div class="hero-background">
+        <div class="morphing-shapes">
+            <div class="morph-shape morph-1"></div>
+            <div class="morph-shape morph-2"></div>
+        </div>
+        <div class="animated-grid"></div>
+    </div>
+
+    <!-- Hero Content -->
+    <div class="hero-content">
+        <div class="hero-text-container">
+            <!-- Professional Badge -->
+            <div class="expertise-badge">
+                <span class="badge-pulse"></span>
+                Frontend Developer & UI Specialist
+            </div>
+     
+  
+
+            <!-- Compelling Headline -->
+            <h1 class="hero-main-title">
+                Turning <span class="gradient-text">Creative Vision</span> Into Digital Reality
+            </h1>
+            
+            <!-- Benefit-Focused Subtitle -->
+            <p class="hero-subtitle">
+                I build <strong>fast, accessible, and beautiful</strong> web experiences using modern technologies. 
+                Currently available for new projects and excited to bring your ideas to life.
+            </p>
+
+             <!-- Trust-Building Stats -->
+        <div class="hero-stats">
+            <div class="stat">
+                <div class="stat-number" data-target="10">0</div>
+                <div class="stat-label">Projects Completed</div>
+                <div class="stat-underline"></div>
+            </div>
+            <div class="stat">
+                <div class="stat-number" data-target="100">0</div>
+                <div class="stat-label">Client Satisfaction</div>
+                <div class="stat-underline"></div>
+            </div>
+            <div class="stat">
+                <div class="stat-number" data-target="2">0</div>
+                <div class="stat-label">Years Experience</div>
+                <div class="stat-underline"></div>
             </div>
         </div>
-        <!-- Arrow Container -->
-<div class="arrow-container">
-  <svg id="animatedArrow" width="250" height="150" viewBox="0 0 100 100">
-    <!-- Bigger downward arrowhead -->
-    <path d="M10 30 L50 90 L90 30 Z" class="arrow-shape"/>
-  </svg>
-</div>
-    </section>
+            <!-- High-Converting CTAs -->
+            <div class="hero-actions">
+                <a href="#projects" class="btn-primary btn-glow">
+                    <i class="fas fa-rocket"></i>
+                    View My Work
+                </a>
+                <a href="#contact" class="btn-outline btn-magnetic">
+                    <i class="fas fa-paper-plane"></i>
+                    Start Project
+                </a>
+            </div>
+
+            <!-- Social Proof -->
+            <div class="trust-indicators">
+                <div class="trust-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Available for new projects</span>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Quick response time</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Subtle Scroll Indicator -->
+    <div class="scroll-indicator">
+        <div class="scroll-text">Discover My Work</div>
+        <div class="scroll-arrow">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M12 5V19M12 19L19 12M12 19L5 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+    </div>
+</section>
 
  <!-- Projects Section -->
-<section class="projects-section">
+<section  id="projects" class="projects-section">
     
             <!-- Floating Orb -->
             <svg class="decorative-element floating-orb" viewBox="0 0 100 100">
@@ -145,7 +205,7 @@
        
 
     <!-- Projects Content -->
-     <div id="projects" class=" projects-section" id ="projects">
+   
     <h2 class="projects-title typewriter">Projects</h2>
     <p class="projects-subtitle"><span class="typewriter-subtitle">Showcasing a selection of my recent work.</span></p>
     <div class="projects-container">
@@ -201,7 +261,7 @@
                 <div class="project-desc">
                     Hexagonal Game Mechanics Powered by TypeScript & CSS
                     <div class="project-image-preview">
-                       <img src="./images/game.png" alt="Portfolio Project Preview" >
+                       <img src="./images/game1.png" alt="Portfolio Project Preview" >
                     </div>
                 </div>
             </div>
@@ -851,7 +911,75 @@
 </footer>
     <!-- End of Footer -->
 
+        <!-- Updated Google Translate Script -->
+    <script>
+    // Load Google Translate Script
+    function loadGoogleTranslate() {
+        // Only load if not already loaded
+        if (document.querySelector('script[src*="translate.google.com"]')) {
+            return;
+        }
+        
+        const script = document.createElement('script');
+        script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+        script.async = true;
+        document.head.appendChild(script);
+    }
+
+    function googleTranslateElementInit() {
+        console.log('Google Translate initialized');
+        
+        new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            includedLanguages: 'en,de,fr,es',
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+            autoDisplay: false,
+            multilanguagePage: true
+        }, 'google_translate_element');
+    }
+
+    // Initialize when DOM is loaded
+    document.addEventListener('DOMContentLoaded', function() {
+        loadGoogleTranslate();
+        
+        // Fallback: if not loaded after 3 seconds, show manual option
+        setTimeout(() => {
+            if (typeof google === 'undefined' || !google.translate) {
+                console.warn('Google Translate failed to load, showing fallback');
+                showManualLanguageSelector();
+            }
+        }, 3000);
+    });
+
+    // Fallback manual language selector
+    function showManualLanguageSelector() {
+        const translateElement = document.getElementById('google_translate_element');
+        if (translateElement) {
+            translateElement.innerHTML = `
+                <select onchange="changeLanguageManual(this.value)" style="
+                    background: transparent;
+                    border: 1px solid var(--accent-primary);
+                    border-radius: 8px;
+                    padding: 8px 12px;
+                    color: var(--text-light);
+                    font-family: 'Inter', sans-serif;
+                ">
+                    <option value="en">English</option>
+                    <option value="de">Deutsch</option>
+                    <option value="fr">Français</option>
+                    <option value="es">Español</option>
+                </select>
+            `;
+        }
+    }
+
+    function changeLanguageManual(lang) {
+        alert('Manual language selection: ' + lang + ' (Google Translate not available)');
+    }
+    </script>
 
     <script src="script.js"></script>
 </body>
+
+   
 </html>
