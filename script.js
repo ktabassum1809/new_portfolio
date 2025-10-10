@@ -33,7 +33,7 @@ window.animateStats = function() {
     const timer = setInterval(() => {
       current += step;
       
-      // Update display every frame
+  
       if (target === 100) {
         stat.textContent = Math.floor(current) + '%';
       } else {
@@ -41,7 +41,7 @@ window.animateStats = function() {
       }
       
       if (current >= target) {
-        // Final update
+      
         if (target === 100) {
           stat.textContent = target + '%';
         } else {
@@ -133,7 +133,7 @@ function playStatsSound() {
 }
 
 function playButtonSound() {
-  const baseFreq = 300; // Higher frequency for better audibility
+  const baseFreq = 300; 
   const variation = Math.random() * 50 - 25;
   
   console.log('🔊 Attempting to play button sound');
@@ -187,7 +187,6 @@ function playSyntheticSound(frequency, duration, volume) {
   }
 }
 
-// More aggressive sound initialization
 document.addEventListener('click', initSounds, { once: true });
 document.addEventListener('keydown', initSounds, { once: true });
 document.addEventListener('touchstart', initSounds, { once: true });
@@ -197,12 +196,6 @@ window.addEventListener('load', initSounds);
 // Force initialization after a short delay as fallback
 setTimeout(initSounds, 1000);
 document.addEventListener("DOMContentLoaded", () => {
-  // ===========================
-  // Hero Stats Animated Counter
-  // ===========================
- 
-
-
 
   // ----------------------
   // Interactive Particles
@@ -244,7 +237,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Initialize particles
 createInteractiveParticles();
 
   // ----------------------
@@ -420,7 +412,7 @@ function setupButtonSounds() {
     burger.addEventListener("click", () => {
       nav.classList.toggle("nav-active");
       
-      // Optional: Change icon when menu is open
+   
       const icon = burger.querySelector('i');
       if (nav.classList.contains("nav-active")) {
         icon.classList.remove('fa-bars');
@@ -806,7 +798,7 @@ if (heroSection) {
       }
     });
   }, { 
-    threshold: 0.1, // Lower threshold
+    threshold: 0.1, 
     rootMargin: '0px 0px 0px 0px'
   });
   

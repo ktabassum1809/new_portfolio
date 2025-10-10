@@ -353,6 +353,8 @@
         }
         
    .tech-item {
+       position: relative;
+    overflow: hidden;
     padding: 0.6rem 1.2rem;
     background: linear-gradient(90deg, 
         rgba(255, 78, 141, 0.15), 
@@ -363,6 +365,20 @@
     font-weight: 500;
     transition: all 0.3s ease;
     border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.tech-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.tech-item:hover::before {
+    left: 100%;
 }
 
 .tech-item:hover {
